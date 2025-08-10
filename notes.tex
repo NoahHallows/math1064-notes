@@ -1,0 +1,77 @@
+\documentclass[a4paper, 11pt]{report}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\title{Math1064 note \\ }
+\author{Noah Hallows - 550727428 \\ University of Sydney}
+\date{Semester 2 2025}
+
+
+\begin{document}
+    \pagenumbering{gobble}
+    \begin{titlepage}
+    \maketitle
+    \end{titlepage}
+    
+    \pagenumbering{arabic}
+    \tableofcontents
+    
+    \newpage
+    \section{What is discrete maths? (Week 1)}
+	Discrete maths is the study of "discrete structures". ie objects that can be counted or sorted into discrete groups, unlike continuous maths where there is a continuous progression of stuff (see smooth graphs). Discrete maths is particularly relevent to computers because digital computers function with discrete values, 1 or 0.\\
+	This can appear in application in many ways, For example\\
+	\begin{itemize}
+		\item How can I sort a database efficiently?
+		\item How many valid passwords can I create?
+		\item What is the shortest path between two points on a grid?
+	\end{itemize}
+	\subsection{Functions and relations}
+	You've seen functions that take in real numbers, e.g \[f(x) = (x-1)(x-2)(x-3)\]. \\
+	We relax this to more general sets, paring an object with exactly one other object. For example Peoples' birthdays correspond to a day of the year.
+	\subsection{Modular arithmetic}
+	Basically the remainer (normally \% operator in computers). It functions kind of like a clock with the result going around in a circle. Can be used to find out which day of the week someones birthday will land on in several years time without using a calender.
+
+    \section{Intro to set theory}
+    Big picture: Describe collections of objects via shared properties. Set theory was developed in 1874 by Georg Cantor.\\
+    \begin{itemize}
+	\item Rough definition: A set S is a collection of objects, which we call elements or members of S.
+	\item If x is in S we write: \(x \in S\)
+	\item If not: \(x \notin S\)
+	\item We often (if possible) list elements of S in braces: \[S = \{x_{1}, x_{2}. x_{3}, \cdots \}\]
+    \end{itemize}
+    Two sets are equal if they contain the same elements. We do not care about order or repetition in sets. \\
+    The empty set, denoted by \(\emptyset\), is a unique set with no elements. There is only one empty set. \\
+    A Singleton set has precisely one elements, eg \(S = \{x\}\) or \(S = \{x, x, x, x\}\) \\
+    Sets can also contain other sets. When this happens the elements of contains set are not the same as elements of the outer set, ie the set \(S = \{x, \{a, b\}\}\) does not contain the item a or b (but it does contain the set containing a and b. Think about it like nesting arrays. \\
+	\subsection{Defining sets by properties}
+	We often describe sets by shared properties. This gets written in what is often called set builder notation. \(A = \{x \in S | P(x)\}\) "The set A is all elements x of S such that x has property P."\\
+	\subsection{Russell's Paradox}
+	Define \[T = \{S, set | S \notin S\}\] \\
+	Question: is \(T \in T\)?\\
+	If yes, \(T \in T\), then T doesn't satisfy the condition which causes \(T \notin T\)\\
+	If not, \(T \notin T\), then T does satisfy the condition which causes \(T \in T\) \\
+	These statements contradict eachother :( This means we need stricter definitions on how we can define sets.\\
+	\subsection{Union and intersection}
+	\(S \cup T\) is everything in S or T or both\\
+	\(S \cap T\) is everything is S and T \\
+	We can take many unions or intersections at a time:
+	\[\cup^{3}_{i=1} \{i, 2i\} = \{1, 2\} \cup \{2, 4\} \cup \{3, 6\} = \{1, 2, 3, 4, 6\}\]
+	These can go to infinity :(
+	\subsection{Subsets}
+	Set S is a subset of set T if every element of S is an element of T, We denote this by \(S \subseteq T\)
+	\subsection{Proving relationships}
+	While for smaller sets we can go through each item to check if two sets are equal this becomes boring. Thus instead of looking at each item individually we can apply a similar principle we used for mathematical induction to show all items of two sets are equal. Ie we take an arbitary element of S and show that this element is also in T. If we need to prove both \(S \subseteq T\) and \(T \subseteq S\) this is called a double containment proof.
+	\subsection{Cardinality}
+	Roughly, the cardinality of a set S, denoted by \(|S|\), is a measure of the size of S. \\
+	If S is finite, then \(|S|\) is the number of distinct elements in S. \\
+	If S is infinte we can write \(|S| = \infty\) BUT infinte sets can have different infinte cardinalities! "maybe see this later"\\
+	\subsection{Set difference}
+	Given two sets, S and T, the set difference S \textbackslash T or S-T is the set of elements \(x \in S\) and \(x \notin T\).
+	\subsection{Complement}
+	Let U be some universal set we are working in. This set U contains all possible elements of S.\\
+	For the set \(S \subseteq U\) the complement of S (in U) is given by \(x \in U\), \(x \notin U\).\\
+	We write this as \(S^{c}\) or \(\overline{S}\) \\
+	The rest of this lecture has a bunch of Venn diagrams which I don't want to recreate. Also Venn diagrams are note sufficient for proofs!!!
+\end{document}
