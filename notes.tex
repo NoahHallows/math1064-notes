@@ -14,10 +14,10 @@
     \begin{titlepage}
     \maketitle
     \end{titlepage}
-    
+
     \pagenumbering{arabic}
     \tableofcontents
-    
+
     \newpage
     \section{What is discrete maths? (Week 1)}
 	Discrete maths is the study of "discrete structures". ie objects that can be counted or sorted into discrete groups, unlike continuous maths where there is a continuous progression of stuff (see smooth graphs). Discrete maths is particularly relevent to computers because digital computers function with discrete values, 1 or 0.\\
@@ -74,4 +74,41 @@
 	For the set \(S \subseteq U\) the complement of S (in U) is given by \(x \in U\), \(x \notin U\).\\
 	We write this as \(S^{c}\) or \(\overline{S}\) \\
 	The rest of this lecture has a bunch of Venn diagrams which I don't want to recreate. Also Venn diagrams are note sufficient for proofs!!!
+
+    \subsection{Power sets}
+    Power set of set S is the collection of all subsets of s.
+    \[\mathcal{P} (\mathbb{S}) = \{A | A \in S\}\]
+    Example \(S = \{a, b\} \rightarrow \mathcal{P} (\mathbb{S} = \{\emptyset, \{a\},
+    \{b\}, \{a, b\}\})\) \\
+    If S is a finite set with \(|S| = n\) then \\
+    \[|\mathcal{P} \mathbb(S)| = 2^{n}\]
+    \subsection{Cartesian product}
+    For two sets, A and B, the Cartesian product \(A \times B\), is given by the
+    set of ordered pairs. \[A \times B = \{(a, b) | a \in A, b \in B\}\]
+    Note order and repetition matter with ordered pairs. Not commutative. We can
+    considar bigger cartesian products, they are the same just with more. If we
+    want to talk about ordered groups bigger than 3 (e.g ordered quadruples) we
+    say ordered n-tuples. If we have the cartesian product of a set with itself:
+    \[A \times A = A^{2}\]
+    eg \(R^{2}\)
+    \subsection{Functions}
+    Given two sets X and Y a function f from X to Y, written as \(f: \mathrm{X}
+    \rightarrow \mathrm{Y}\), is an assignment to each \(x \in X\) exactly one
+    \(y \in Y\) which we also write as \(y = f(x)\) \\
+    Some terminology \\
+    \begin{itemize}
+        \item X is the domain
+        \item Y is the co-domain
+        \item If \(x \in X\) then \(f(x) \in Y\) is called the image of x under
+            f
+        \item If \(A \subseteq X\), then the image of A is the set: \(f(A) -
+            \{f(a) : a \in A \} \subseteq Y\)
+        \item We call \(f(X)\) the range of f \(f(X) = \{f(x) | x \in X\}
+            \subseteq Y\)
+        \item If \(y \in Y\), the pre-image of y is the set \(f^{-1}(y) = \{x
+            \in X | f(x) = y\} \subseteq X\)
+        \item Identiry function is \(f(x) = x\)
+        \item Floor function maps reals to intergers and rounds down, ceiling is
+            the same but rounds up.
+    \end{itemize}
 \end{document}
